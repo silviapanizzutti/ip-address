@@ -24,7 +24,8 @@ def save_new_username_correct(username, password):
     global conn
     global cursor
     salt = secrets.token_hex(16)
-    digest = hashlib.sha256(password.encode('utf-8') + salt.encode("utf-8")).hexdigest()
+    digest = hashlib.sha256(password.encode('utf-8') +
+                            salt.encode("utf-8")).hexdigest()
     cursor.execute("INSERT OR REPLACE INTO user VALUES (?,?,?)",
                    (username, digest, salt))
     conn.commit()
@@ -37,7 +38,8 @@ def check_for_username_correct(username, password):
     salt = rows.fetchall()
     if len(salt) == 0:
         return -1
-    digest = hashlib.sha256(password.encode('utf-8') + salt[0][0].encode("utf-8")).hexdigest()
+    digest = hashlib.sha256(password.encode('utf-8') +
+                            salt[0][0].encode("utf-8")).hexdigest()
     rows = cursor.execute("SELECT * FROM user WHERE username=? and password=?",
                           (username, digest))
     conn.commit()
