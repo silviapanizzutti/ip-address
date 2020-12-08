@@ -1,5 +1,5 @@
 from ip_address import get_location
-from distance import getDistanceFromLatLonInKm
+from distance import getDistanceFromLatLonInKm as getdistlat
 from database import *
 import argparse
 from getpass import getpass
