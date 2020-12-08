@@ -2,18 +2,23 @@ import requests
 import json
 
 
-IP_URL ='http://ip-api.com/json/{}'
+IP_URL = 'http://ip-api.com/json/{}'
+
 
 def get_location(ip_address):
-
+    re = requests.get("http://ip-api.com/json/")
+    loc = re.json()
     URL = IP_URL.format(ip_address)
     r = requests.get(URL)
     info = json.loads(r.text)
-    #print(info)
     try:
         location = info['country']
         city = info['city']
+        lat1 = info["lat"]
+        lng1 = info["lon"]
+        lat2 = loc["lat"]
+        lng2 = loc["lon"]
     except KeyError:
-        print('Error')
+        raise KeyError
 
-    return location, city
+    return lat1, lng1, lat2, lng2, location, city
