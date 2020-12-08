@@ -26,7 +26,7 @@ except:
         print("ip address is not valid")
     quit()
 try:
-    show_map({"lat": [lat1, lat2], "lon": [lng1, lng2]})
+    show_map({"lat": [lat1, lat2], "lon": [lng1, lng2], "IP":["Requested IP", "Your IP"]})
 except:
     import traceback
     traceback.print_exc()
