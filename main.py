@@ -1,7 +1,7 @@
 from ip_address import get_location
 from distance import getDistanceFromLatLonInKm as getdistlat
 from maps import show_map
-from database import *
+from database import open_and_create, save_new_username_correct, check_for_username_correct
 import argparse
 from getpass import getpass
 import sys
