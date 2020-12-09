@@ -25,9 +25,9 @@ def getOptions(args=sys.argv[1:]):
 args = getOptions()
 
 if args.signup is None:
-    signup=input("press 1 if you want to sign in and 2 if you want to sign up ")
+    signup=input("press 1 if you want to sign in and 2 if you want to sign up ")  
     if signup == "2":
-        open_and_create()
+        open_and_create()    # this connects the psw database module with the main
         user=input("insert a new username ")
         passwd=input("insert a new password ")
         save_new_username_correct(user,passwd)
@@ -67,7 +67,7 @@ except:
     quit()
     
 try:
-    show_map({"lat": [lat1, lat2], "lon": [lng1, lng2], "IP":["Requested IP", "Your IP"]})
+    show_map({"lat": [lat1, lat2], "lon": [lng1, lng2], "IP":["Requested IP", "Your IP"]})  # this opens up the map in another page
 except:
     import traceback
     traceback.print_exc()
