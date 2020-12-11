@@ -20,7 +20,8 @@ def open_and_create():  # create user table
                       PRIMARY KEY (username))''')
 
 
-def save_new_username_correct(username, password):  # compute the hash of the password, add the salt and save it into the database
+# compute the hash of the password, add the salt and save it into the database
+def save_new_username_correct(username, password):
     global conn
     global cursor
     salt = secrets.token_hex(16)
@@ -31,7 +32,8 @@ def save_new_username_correct(username, password):  # compute the hash of the pa
     conn.commit()
 
 
-def check_for_username_correct(username, password):  # check username and password, computing the hash 
+# check username and password, computing the hash
+def check_for_username_correct(username, password):
     global conn
     global cursor
     rows = cursor.execute("SELECT salt FROM user WHERE username=?", [username])
