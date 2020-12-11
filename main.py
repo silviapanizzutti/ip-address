@@ -1,7 +1,9 @@
 from ip_address import get_location
 from distance import getDistanceFromLatLonInKm as getdistlat
 from maps import show_map
-from database import open_and_create, save_new_username_correct, check_for_username_correct
+from database import open_and_create
+from database import save_new_username_correct
+from database import check_for_username_correct
 import argparse
 from getpass import getpass
 import sys
@@ -18,20 +20,23 @@ def getOptions(args=sys.argv[1:]):
                         required=False)
     parser.add_argument('-p', "--password", help="the username's password",
                         required=False)
-    parser.add_argument('-s',"--signup", help="are you a new user?select 2, otherwise press 1",
+    parser.add_argument('-s', "--signup",
+                        help="are you a new user?select 2,
+                        otherwise press 1",
                         required=False)
     args = parser.parse_args()
     return args
 args = getOptions()
 
 if args.signup is None:
-    signup=input("press 1 if you want to sign in and 2 if you want to sign up ")  
+    signup = input("press 1 to sign and 2 to sign up ")
     if signup == "2":
-        open_and_create()    # this connects the psw database module with the main
-        user=input("insert a new username ")
-        passwd=input("insert a new password ")
-        save_new_username_correct(user,passwd)
-    elif  signup == "1":
+        # this connects the psw database module with the main
+        open_and_create()
+        user = input("insert a new username ")
+        passwd = input("insert a new password ")
+        save_new_username_correct(user, passwd)
+    elif signup == "1":
         if args.username is None:
             user = input("insert username ")
             passwd = getpass()
@@ -65,9 +70,12 @@ except:
     if args.verbose:
         print("ip address is not valid")
     quit()
-    
+
 try:
-    show_map({"lat": [lat1, lat2], "lon": [lng1, lng2], "IP":["Requested IP", "Your IP"]})  # this opens up the map in another page
+    show_map({"lat": [lat1, lat2],
+              "lon": [lng1, lng2],
+              "IP": ["Requested IP",
+                     "Your IP"]})  # this opens up the map in another page
 except:
     import traceback
     traceback.print_exc()
