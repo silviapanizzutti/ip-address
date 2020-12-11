@@ -6,7 +6,7 @@ conn = None
 cursor = None
 
 
-def open_and_create():
+def open_and_create():  # create user table
     global conn
     global cursor
     conn = sqlite3.connect('users.db')
@@ -20,7 +20,7 @@ def open_and_create():
                       PRIMARY KEY (username))''')
 
 
-def save_new_username_correct(username, password):
+def save_new_username_correct(username, password):  # compute the hash of the password, add the salt and save it into the database
     global conn
     global cursor
     salt = secrets.token_hex(16)
@@ -31,7 +31,7 @@ def save_new_username_correct(username, password):
     conn.commit()
 
 
-def check_for_username_correct(username, password):
+def check_for_username_correct(username, password):  # check username and password, computing the hash 
     global conn
     global cursor
     rows = cursor.execute("SELECT salt FROM user WHERE username=?", [username])
