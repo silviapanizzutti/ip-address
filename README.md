@@ -3,7 +3,7 @@
 
 By running this program you will be able to discover the location of an IP address and see with a geographical representation how far it is from your IP address. 
 
-### Prerequisites
+## Prerequisites
 
 What things you need to install the software and how to install them.
 
@@ -26,15 +26,15 @@ The function ```show_map``` from ```maps.py``` opens in a new page a map with th
 
 In this repository you can also find other files that allow the program to properly run:
 
-*```database.py``` that implements the ```open_and_create()``` function that uses sqlite3 to create a user table; the ```save_new_username_correct(username,password)``` that uses secrets and package to generate salt and hashlib to hash the password; ```check_for_username_correct(username, password)```that computing the hash check if the username is present and the password is correct.
+* ```database.py``` that implements the ```open_and_create()``` function that uses sqlite3 to create a user table; the ```save_new_username_correct(username,password)``` that uses secrets and package to generate salt and hashlib to hash the password; ```check_for_username_correct(username, password)```that computing the hash check if the username is present and the password is correct.
 
-*```ip_address.py``` that implements the ```get_location(ip_address)``` function that queries the [ip-api](https://ip-api.com/docs/api:json) website to fetch data about the location of the given input ```ip_address``` (lat, lon, country and city)
+* ```ip_address.py``` that implements the ```get_location(ip_address)``` function that queries the [ip-api](https://ip-api.com/docs/api:json) website to fetch data about the location of the given input ```ip_address``` (lat, lon, country and city)
 
-*```distance.py``` that implements the ```getDistanceFromLatLonInKm()``` that, using geopy measures the distance in Km from the Ip address requested and yours, using the data from```get_location(ip_address)``` function in ```ip_address.py``` file. 
+* ```distance.py``` that implements the ```getDistanceFromLatLonInKm()``` that, using geopy measures the distance in Km from the Ip address requested and yours, using the data from```get_location(ip_address)``` function in ```ip_address.py``` file. 
 
-*```maps.py``` that implements the ```show_map(data)``` function that uses plotly.express to create a map showing the locations of the requested Ip address and your Ip address.
+* ```maps.py``` that implements the ```show_map(data)``` function that uses plotly.express to create a map showing the locations of the requested Ip address and your Ip address.
 
-*```.gitignore``` ...
+* ```.gitignore``` ...
 
 
 ## Built With
