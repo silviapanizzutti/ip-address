@@ -1,14 +1,42 @@
+# Ip address geolocator
 ## Implementation of an IP address Geolocator
 
+By running this program you will be able to discover the location of an IP address and see with a geographical representation how far it is from your IP address. 
 
-In this repository you can find a file named ```ip_address.py``` that implements the ```get_location(ip_address)``` function.
-Such function queries the [ip-api](https://ip-api.com/docs/api:json) website to fetch data about the location of the given input ```ip_address```.
-If you run the program, executing the main file with: ```python main.py``` it will give you an output similar to the following: 
+### Prerequisites
+
+What things you need to install the software and how to install them.
 
 ```
-$ python main.py
-IP address 153.138.24.18 is from Chiyoda, Japan 
+Give examples (list)
 ```
 
-The project requires ```json``` and ```requests``` modules to run. The API offers several information beyond country and city (like region, zip, latutude and longitude and so on): you can explore different options to be implemented in your projects. Note that also a "status" flag is returned to indicate the success of the request (the endpoint is limited to 45 requests per minute from an IP address).
+## Running the program
+
+In order to run our project you need to open from this repository the file named ```main.py```
+The function ```getOptions(args=sys.argv[1:])``` uses argparse to generate help messages:
+* if you type ...you will receive this message: 
+```
+Give examples
+```
+The function gives you an input option: "press 1 if you want to sign in and 2 if you want to sign up ". the function ```save_new_username_correct```  will save your data. If you are a new user press 2 and insert a username and a password. If you are not a new user press 1 and insert yor username and your password the function ```check_for_username_correct``` in ```database.py``` file will check the correctness of the input.
+
+If your inputs are correct, the program will ask you the Ip address you want to localize. Using the function ```get_location```in ```ip_address.py``` file and ```getDistanceFromLatLonInKm()``` in ```distance.py``` file, it will return the location of the IP address and how far it is from yours. 
+The function ```show_map``` from ```maps.py``` opens in a new page a map with the two IP locations.
+
+In this repository you can also find other files that allow the program to properly run:
+
+*```database.py``` that implements the ```open_and_create()``` function that uses sqlite3 to create a user table; the ```save_new_username_correct(username,password)``` that uses secrets and package to generate salt and hashlib to hash the password; ```check_for_username_correct(username, password)```that computing the hash check if the username is present and the password is correct.
+
+*```ip_address.py``` that implements the ```get_location(ip_address)``` function that queries the [ip-api](https://ip-api.com/docs/api:json) website to fetch data about the location of the given input ```ip_address``` (lat, lon, country and city)
+
+*```distance.py``` that implements the ```getDistanceFromLatLonInKm()``` that, using geopy measures the distance in Km from the Ip address requested and yours, using the data from```get_location(ip_address)``` function in ```ip_address.py``` file. 
+
+*```maps.py``` that implements the ```show_map(data)``` function that uses plotly.express to create a map showing the locations of the requested Ip address and your Ip address.
+
+*```.gitignore``` ...
+
+
+## Built With
+...
 
