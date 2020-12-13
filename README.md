@@ -1,20 +1,20 @@
-# Ip address geolocator
+# IP Address Geolocator
 ## Implementation of an IP address Geolocator
 
-By running this program you will be able to discover the location of an IP address and see with a geographical representation how far it is from your IP address. 
+By running this program you will be able to discover the location of an IP address and see the geographical representation and how far it is from yours. 
 
-## Prerequisites
+## Requirements
 
-What things you need to install the software and how to install them.
+In order to run the code properly you need at least Python 3.9 (https://www.python.org/downloads/) and to install the following packets by running this code on your terminal.
 
 ```
-Give examples (list)
+python3 -m pip install -r re.txt
 ```
 
 ## Running the program
 
 In order to run our project you need to open from this repository the file named ```main.py```
-The function ```getOptions(args=sys.argv[1:])``` uses argparse to generate help messages:
+The function ```getOptions(args=sys.argv[1:])``` uses argparse to validate the input. When you call the function you can 
 * if you type ...you will receive this message: 
 ```
 Give examples
