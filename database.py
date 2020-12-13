@@ -7,6 +7,7 @@ cursor = None
 
 
 def open_and_create():  # create user table
+    """Creates a user table"""
     global conn
     global cursor
     conn = sqlite3.connect('users.db')
@@ -22,6 +23,7 @@ def open_and_create():  # create user table
 
 # compute the hash of the password, add the salt and save it into the database
 def save_new_username_correct(username, password):
+    """Computes the hash of the password and adds the salt, saves it into the database"""
     global conn
     global cursor
     salt = secrets.token_hex(16)
@@ -34,6 +36,7 @@ def save_new_username_correct(username, password):
 
 # check username and password, computing the hash
 def check_for_username_correct(username, password):
+    """Checks for username and password computing the hash"""
     global conn
     global cursor
     rows = cursor.execute("SELECT salt FROM user WHERE username=?", [username])
