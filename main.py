@@ -11,11 +11,11 @@ import sys
 
 def getOptions(args=sys.argv[1:]):
     """ Requests the arguments the user can insert when calling the function:
-        -requires a choice between signup and sign in
-        -requires a username and a password
-        -requires an ip address 
+        * requires a choice between signup and sign in
+        * requires a username and a password
+        * requires an ip address 
         and returns:
-        -distance from the query and map displaying the position of the ip adresses
+        * distance from the query and map displaying the position of the ip adresses
     """
     parser = argparse.ArgumentParser()
     parser.add_argument("-v", "--verbose", help="increase output verbosity",
