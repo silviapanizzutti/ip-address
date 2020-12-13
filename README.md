@@ -46,10 +46,8 @@ In this repository you can also find other files that allow the program to prope
 * ```maps.py``` that implements the ```show_map(data)``` function that uses plotly.express to create a map showing the locations of the requested IP address and your IP address.
 
 
-
-
 ## Licence 
-In this project we used the GNU Licence[https://www.gnu.org/licenses/gpl-3.0.html]. You can find all its details of usage in the file LICENCE.
+In this project we used the [GNU Licence](https://www.gnu.org/licenses/gpl-3.0.html). You can find all its details of usage in the file LICENCE.
 
 
 ## Tests 
