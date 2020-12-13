@@ -53,4 +53,4 @@ In this project we used the GNU Licence[https://www.gnu.org/licenses/gpl-3.0.htm
 
 
 ## Tests 
-We tested the correctness of the code and how it responds to wrong inputs through the module unittest. We used ```test_correct_values(self)``` function to verify if a correct input returns the expected results, the ```test_wrong_values(self)``` function to verify if an invalid input raises a KeyError and ```test_empty_string(self)```
+We tested the correctness of the code and how it responds to wrong inputs through the module unittest. We used ```test_correct_values(self)``` function to verify if a correct input returns the expected results, the ```test_wrong_values(self)``` function to verify if an invalid input raises a KeyError and ```test_empty_string(self)``` to verify if an empty string raises a KeyError as well.
