@@ -14,11 +14,13 @@ python3 -m pip install -r re.txt
 ## Running the program
 
 In order to run our project you need to open from this repository the file named ```main.py```
-The function ```getOptions(args=sys.argv[1:])``` uses argparse to validate the input. When you call the function you can 
+The function ```getOptions(args=sys.argv[1:])``` uses argparse to validate the input. When you call the function you can either specify all the arguments when you call the function like in example 1, if you do not the system wll ask you for the fundamental imputs one after the other.
 * if you type ...you will receive this message: 
+EX 1
 ```
-Give examples
+python3 main.py -v -s 1 -u admin -p admin -ip 153.138.24.18 
 ```
+
 The function gives you an input option: "press 1 if you want to sign in and 2 if you want to sign up ". the function ```save_new_username_correct```  will save your data. If you are a new user press 2 and insert a username and a password. If you are not a new user press 1 and insert yor username and your password the function ```check_for_username_correct``` in ```database.py``` file will check the correctness of the input.
 
 If your inputs are correct, the program will ask you the Ip address you want to localize. Using the function ```get_location```in ```ip_address.py``` file and ```getDistanceFromLatLonInKm()``` in ```distance.py``` file, it will return the location of the IP address and how far it is from yours. 
