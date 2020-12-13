@@ -28,8 +28,7 @@ def getOptions(args=sys.argv[1:]):
     parser.add_argument('-p', "--password", help="the username's password",
                         required=False)
     parser.add_argument('-s', "--signup",
-                        help="are you a new user?select 2,
-                        otherwise press 1",
+                        help="are you a new user?select 2,otherwise press 1",
                         required=False)
     args = parser.parse_args()
     return args
