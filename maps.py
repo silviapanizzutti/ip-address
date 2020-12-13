@@ -3,6 +3,9 @@ import pandas as pd
 
 
 def show_map(data):
+    """Shows the map with the exact location of 
+       the query and that of the requested IP.
+    """
     fig = px.scatter_mapbox(pd.DataFrame(data=data),
                             lat="lat",
                             lon="lon",
