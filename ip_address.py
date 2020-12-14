@@ -10,7 +10,7 @@ def get_location(ip_address):
        * latitude,longitude,country and city for the ip requested
        * latitude and longitude for the query (user's ip address)
     """
-   
+
     re = requests.get("http://ip-api.com/json/")
     loc = re.json()
     URL = IP_URL.format(ip_address)
