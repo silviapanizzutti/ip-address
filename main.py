@@ -36,7 +36,7 @@ def getOptions(args=sys.argv[1:]):
 args = getOptions()
 
 if args.signup is None:
-    signup = input("press 1 to sign and 2 to sign up ")
+    signup = input("press 1 to sign in and 2 to sign up ")
     if signup == "2":
         # this connects the psw database module with the main
         open_and_create()
