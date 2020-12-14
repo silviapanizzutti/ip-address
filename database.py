@@ -23,7 +23,8 @@ def open_and_create():  # create user table
 
 # compute the hash of the password, add the salt and save it into the database
 def save_new_username_correct(username, password):
-    """Computes the hash of the password and adds the salt, saves it into the database"""
+    """Computes the hash of the password and adds the salt,
+    saves it into the database"""
     global conn
     global cursor
     salt = secrets.token_hex(16)
