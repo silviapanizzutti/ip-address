@@ -14,7 +14,7 @@ python3 -m pip install -r re.txt
 ## Running the program
 
 In order to run our project you need to open from this repository the file named ```main.py```
-The function ```getOptions(args=sys.argv[1:])``` uses argparse to validate the input. When you call the function you can either specify all the arguments when you call the function like in example 1, if you do not the system wll ask you for the fundamental imputs one after the other like in EX.2
+The function ```getOptions(args=sys.argv[1:])``` uses argparse to validate the input. When you call the function you can either specify all the arguments when you call the function like in EX.1, if you do not the system wll ask you for the fundamental inputs one after the other like in EX.2
  
 EX.1
 ```
